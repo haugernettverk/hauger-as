@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Hjemmeside</title>
+</head>
+<body>
+
+    <div class="dropdown-menu" >
+
+        <span class="material-symbols-outlined dropdownBtn startup">menu</span>
+
+        <div class="menu-content">
+            <li><a href="#OmOss">Om Oss</a></li>
+            <li><a href="#Produkter">Produkter</a></li>
+            <li><a href="#Historie">Historie</a></li>
+            <li><a href="#TaKontakt">Ta Kontakt</a></li>
+        </div>
+        
+    </div>
+    
+
+    <div class="logo"><img src="./photos/Hauger As lang TRANSPARENT.png" alt="HAUGER AS, VERKTOY & PLAST"></div>
+    
+    <div class="arrow-down">
+        <span class="material-symbols-outlined"><a href="#OmOss">arrow_downward_alt</a></span>
+    </div>
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main-container">
+        
+        <section id="OmOss">
+            <div style="background:rgba(0, 0, 255, 0.2);">
+                <h1>Om Oss</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ac
+                    cusantium tempore at vitae similique rerum, aspernatur quia, tempora impedit sequi
+                    consequatur itaque rem 
+                    molestias voluptate dolores! Eum officiis libero temporibus itaque.
+                </p>
+            </div>
+
+
+            <div style="background:rgba(255, 0, 0, 0.2);"></div>
+        </section>
+
+        <!------------------------------------------------------------------------->
+
+
+        <section id="Produkter">
+            <div style="background:rgba(0, 0, 255, 0.2);">
+                <h1>Produkter</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ac
+                    cusantium tempore at vitae similique rerum, aspernatur quia, tempora impedit sequi
+                    consequatur itaque rem 
+                    molestias voluptate dolores! Eum officiis libero temporibus itaque.
+                </p>
+            </div>
+
+
+            <div style="background:rgba(255, 0, 0, 0.2);"></div>
+        </section>
+
+        <!------------------------------------------------------------------------->
+
+
+
+        <section id="Historie">
+            <div style="background:rgba(0, 0, 255, 0.2);">
+                <h1>Historie</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ac
+                    cusantium tempore at vitae similique rerum, aspernatur quia, tempora impedit sequi
+                    consequatur itaque rem 
+                    molestias voluptate dolores! Eum officiis libero temporibus itaque.
+                </p>
+            </div>
+
+
+            <div style="background:rgba(255, 0, 0, 0.2);"></div>
+        </section>
+
+        <!------------------------------------------------------------------------->
+
+        <section id="TaKontakt">
+            <div style="background:rgba(0, 0, 255, 0.2);">
+                <h1>Ta Kontakt</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ac
+                    cusantium tempore at vitae similique rerum, aspernatur quia, tempora impedit sequi
+                    consequatur itaque rem 
+                    molestias voluptate dolores! Eum officiis libero temporibus itaque.
+                </p>
+            </div>
+
+
+            <div style="background:rgba(255, 0, 0, 0.2);"></div>
+        </section>
+
+        <!------------------------------------------------------------------------->
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            //
+
+            var dropdownBtn = document.querySelector(".dropdown-menu .dropdownBtn")
+            var dropdownBtnActive = document.querySelector(".dropdown-menu .dropdownBtn active")
+            var dropdownMenu = document.querySelector(".dropdown-menu .menu-content")
+            dropdownBtn.addEventListener("click", function() {
+                dropdownMenu.classList.toggle("active");
+                dropdownBtn.classList.toggle("active");
+
+                setTimeout(function() {
+
+                    dropdownMenu.classList.remove("active");
+                    dropdownBtn.classList.remove("active");
+
+                }, 5000)
+            })
+
+            //TRANSITION ON WINDOW LOAD
+
+            var logoTransition = document.querySelector(".logo img");
+            var arrowDownTransition = document.querySelector(".arrow-down")
+            window.onload = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                setTimeout(function() {
+                    logoTransition.style.transform = "translateY(-50px)";
+                    logoTransition.style.opacity = "1";
+
+                    arrowDownTransition.style.transform = "translateY(0px)"
+                    arrowDownTransition.style.opacity = "1"
+
+
+                    setTimeout(function() {
+                        dropdownBtn.classList.remove("startup");
+                    }, 500);
+
+
+                }, 100)
+                
+            }
+
+
+        })
+
+
+    </script>
+
+</body>
+</html>

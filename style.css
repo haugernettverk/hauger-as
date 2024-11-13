@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    user-select:none;
+}
+
+body{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    list-style-type:none;
+    overflow-x:hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+/*------------------------------SCROLL--------------------------------*/
+
+
+body::-webkit-scrollbar{width:8px;}
+body::-webkit-scrollbar-track{background:transparent;}
+body::-webkit-scrollbar-thumb{background:rgba(0, 0, 0, 0.2); border-radius:10px;}
+body::-webkit-scrollbar-thumb:hover{background:rgb(0, 0, 0, 0.5)}
+
+
+
+/*----------------------------DROPDOWN MENU----------------------------------*/
+
+.dropdown-menu{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:100px;
+}
+
+
+
+.dropdown-menu .dropdownBtn{
+    height:25px;
+    width:25px;
+    display:flex;
+    justify-content:left;
+    transition:all 0.5s ease;
+    transform:translateX(0px);
+
+
+}
+.dropdownBtn.active{transform:translateX(calc( (100px / 2) - (25px / 2) ))}
+.dropdownBtn.startup{transform:translateX(-45px);}
+
+
+
+.dropdown-menu .menu-content{
+    transform:translateX(-90px);
+    display:flex;
+    opacity:0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:15px 0 6px 0;
+    gap:15px;
+    transition:all 0.5s ease;
+
+}
+
+
+.dropdown-menu .menu-content.active{
+    transform:translate(0);
+    opacity:1;
+}
+
+.dropdown-menu .menu-content li a {
+    color:black;
+    text-decoration:none;
+}
+
+
+
+
+/*-----------------------------MAIN LOGO---------------------------------*/
+
+
+
+.logo{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.logo img{
+    width:95vw;
+    transition:all 0.5s ease;
+    opacity:0;
+    transform:TranslateY(0);
+    
+}
+
+
+/*--------------------------------ARROW DOWN------------------------------*/
+
+
+.arrow-down{
+    position:absolute;
+    bottom:50px;
+    transition:all 1s ease;
+    transform:translateY(-50px);
+    opacity:0;
+}
+.arrow-down .material-symbols-outlined{
+    font-size:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}.material-symbols-outlined a{color:black;}
+
+
+
+/*-------------------------------MAIN CONTAINER-------------------------------*/
+
+
+
+
+.main-container{
+    width:100vw;
+    height:fit-content;
+
+    display:flex;
+    flex-direction:column;
+    
+}
+
+.main-container section{
+    /*height:100%;*/
+    height:95vh;
+    padding:20px;
+
+    background:beige;
+
+
+    display:flex;
+    flex-direction:column;
+    
+}
+
+
+.main-container section div{
+    height:50%;
+    width:100%;
+    
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    
+}
+
+
+
+
+
+/*------------------------------RESPONSIVE MEDIA--------------------------------*/
+
+
+
+@media only screen and (min-width: 40.063em){
+    
+    .logo img{
+        width: 50vw;
+    }
+
+    .main-container section{
+        flex-direction:row;
+        align-items:center;
+        margin:20px;
+    }
+
+    .main-container #Produkter, .main-container #TaKontakt{
+        flex-direction:row-reverse;
+    }
+
+
+    .main-container section div{
+        height:70%;
+        width:50%;
+    }
+
+}
+
+
